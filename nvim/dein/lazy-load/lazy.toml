@@ -1,0 +1,31 @@
+# プラグインを使用するときのにロードされる
+
+# toml syntax
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+# 閉じタグ補完
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = ['html', 'xhtml', 'javascript.jsx', 'typescript.tsx']
+hook_add = '''
+  let g:closetag_filenames='*.html'
+  let g:closetag_xhtml_filenames='*.jsx,*.tsx,*.vue'
+  let g:closetag_filetypes='html'
+  let g:closetag_xhtml_filetypes='jsx,tsx,javascript.jsx,typescript.tsx,vue'
+  let g:closetag_emptyTags_caseSensitive=1
+  let g:closetag_shortcut='>'
+'''
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft=['tex']
+hook_source='''
+  let g:vimtex_view_general_viewer = 'displayline'
+  let g:vimtex_view_general_options = '-r @line @pdf @tex'
+  cnoremap l<CR> <ESC>i\documentclass[a4j]{jsarticle}<CR>\usepackage[dvipdfmx]{graphicx}<CR>\usepackage{listings}<CR>\usepackage{color}<CR><CR>\title{}<CR>\author{201911419<Space>土佐凜斗}<CR>\begin{document}<CR>\maketitle<CR>\section{}<CR><CR>\section{}<CR>\end{document}<ESC>
+  cnoremap g<CR> <ESC>i\begin{figure}[htbp]<CR>\centering<CR>\includegraphics[width=100mm]{hoge.jpeg}<CR>\caption{図のキャプション}<CR><BS>\end{figure}<ESC>
+  cnoremap s<CR> <ESC>i\begin{lstlisting}[caption=hoge.c]<CR><CR>\end{lstlisting}<ESC><Up>
+'''    
+

@@ -1,0 +1,87 @@
+# vim起動時にロードされる
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# colorscheme settings
+[[plugins]]
+repo = 'gosukiwi/vim-atom-dark'
+hook_add = '''
+  syntax on
+  colorscheme atom-dark-256
+'''
+
+# terminal設定
+
+# ステータスライン
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {'colorscheme': 'wombat'}
+'''
+
+# コメントアウト
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+    nnoremap ? :'<,'>TComment<CR>
+    vnoremap ? :'<,'>TComment<CR>
+'''
+
+# windowsizeのやつ
+[[plugins]]
+repo = 'simeji/winresizer'
+
+# gitの記号
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = 'set updatetime=100'
+
+# 多言語パック(プラグイン無効化は↓)
+# let let g:polyglot_disabled = ['{言語}']
+[[plugins]]
+repo = 'sheerun/vim-polyglot' 
+
+# lsp
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merged = 0 
+rev = 'release'
+build = '''
+  git checkout release
+'''
+hook_add = '''
+  set hidden
+
+  set nobackup
+  set nowritebackup
+
+  set pumblend=10
+
+  set updatetime=100
+
+  set statusline^=%{coc#status()}
+
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  let g:coc_snippet_next = '<tab>'
+
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+  nmap <silent> gd :vs<CR><Plug>(coc-definition)
+
+  nmap <silent> gf <Plug>(coc-references)
+
+  nmap <silent> <C-j> :<C-u>call CocAction('doHover')<cr>
+
+
+'''
+

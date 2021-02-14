@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/tosarinto/.config'
+let g:netrw_dirhist_3='/Users/tosarinto/.config/nvim'
+let g:netrw_dirhist_2='/Users/tosarinto/.config/nvim/dein'
+let g:netrw_dirhist_1='/Users/tosarinto/.config/nvim'
+let g:netrw_dirhist_0='/Users/tosarinto/.config'
+let g:netrw_dirhist_9='/Users/tosarinto'
+let g:netrw_dirhist_8='/Users/tosarinto/neovim_settings'
+let g:netrw_dirhist_7='/Users/tosarinto/neovim_settings/dein'
+let g:netrw_dirhist_6='/Users/tosarinto/.config/nvim'
+let g:netrw_dirhist_5='/Users/tosarinto/.config'
