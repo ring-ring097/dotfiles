@@ -68,10 +68,16 @@ nnoremap bd :bd<CR>
 " カーソル系
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-j> gjgjgj
+nnoremap <C-k> gkgkgk
 nnoremap J gjgjgj
 nnoremap K gkgkgk
-nnoremap H ^
-nnoremap L $ 
+nnoremap <C-h> ^
+nnoremap <C-l> $ 
+vnoremap <C-j> gjgjgj
+vnoremap <C-k> gkgkgk
+vnoremap J gjgjgj
+vnoremap K gkgkgk
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
@@ -92,6 +98,10 @@ inoremap (<Enter> ()<Left><CR><ESC><S-o>
 " クオーテーションの補完
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
+nnoremap "" bi"<ESC>eli"<ESC>
+nnoremap '' bi'<ESC>eli'<ESC>
+nnoremap " bhxelx
+nnoremap " bhxelx
 
 " クリップボード
 nnoremap p "0p
@@ -100,6 +110,7 @@ nnoremap P p
 " insertモードから抜ける
 inoremap ;; <ESC><S-a>;<ESC>
 inoremap ,, <ESC><S-a>,<ESC>
+inoremap <C-@> <ESC>
 
 " visulaモード
 nnoremap vv viw
@@ -115,8 +126,28 @@ nnoremap t <C-w>w
 nnoremap T <C-w>h
 nnoremap ee :vs<CR>:e.<CR>
 
-" バッファタブ
+" コメントアウト
+noremap <C-c> <ESC>
+nmap <C-c><C-c> gcc
+vmap <C-c><C-c> gc
 
+" ターミナル
+tnoremap <silent> <C-[> <C-\><C-n>
+nnoremap <C-t> :T<CR>
+command! -nargs=* T split | wincmd j | resize 8 | terminal <args>
+autocmd TermOpen * startinsert
+
+" 大文字小文字変換
+nnoremap <C-u> viwU
+nnoremap U viwu
+vnoremap <C-u> U
+vnoremap U u
+
+" Undo, Redo
+nnoremap R <C-r>
+vnoremap R <ESC>
+
+" バッファタブ
 
 " ハイライト削除
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
@@ -126,8 +157,12 @@ nmap <ESC><ESC> :nohlsearch<CR><ESC>
 "--------------------------------------------------------------
 "          plugin manager                                   <<<
 "--------------------------------------------------------------
-"python3 のパス
-let g:python3_host_prog = '/usr/local/Cellar/python@3.8/3.8.5/bin/python3.8'
+" let g:python3_host_prog = '/usr/local/Cellar/python@3.8/3.8.5/bin/python3.8'
+
+" python3 のパス
+let g:python3_host_prog = expand('~/nvim-python3/bin/python3')
+" python2のパス
+let g:python_host_prog = expand('~/nvim-python2/bin/python2')
 
 if &compatible
   set nocompatible
@@ -186,5 +221,4 @@ endif
 " latex
 let g:tex_flavor = "latex"
 let maplocalleader=' '
-" <<<
 

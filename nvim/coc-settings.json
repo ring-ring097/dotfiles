@@ -18,5 +18,6 @@
     "cpp": ["c"],
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
-  } 
+  },
+  "python.jediEnabled": false
 }

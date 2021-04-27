@@ -10,8 +10,6 @@ hook_add = '''
   colorscheme atom-dark-256
 '''
 
-# terminal設定
-
 # ステータスライン
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -80,7 +78,7 @@ hook_add = '''
 
   nmap <silent> gf <Plug>(coc-references)
 
-  nmap <silent> <C-j> :<C-u>call CocAction('doHover')<cr>
+  nmap <silent> H :<C-u>call CocAction('doHover')<cr>
 
 
 '''
