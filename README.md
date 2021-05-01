@@ -20,9 +20,12 @@ neovimの設定（dein.vim coc.vim）
 `$ nvim -version`
 
 ## python3のインストール
-`$ brew install python3`
+参照：https://kotaro7750.hatenablog.com/entry/nvim_venv
 
-`$ pip3 install -U neovim`
+`- $ brew install python3`
+
+`- $ pip3 install -U neovim`
+
 
 ## dein.vimのインストール
 `$ mkdir ~/.vim/dein`
@@ -37,3 +40,5 @@ neovimの設定（dein.vim coc.vim）
 
 ##vim状態確認
 `:checkhealth`
+
+
