@@ -157,8 +157,6 @@ nmap <ESC><ESC> :nohlsearch<CR><ESC>
 "--------------------------------------------------------------
 "          plugin manager                                   <<<
 "--------------------------------------------------------------
-" let g:python3_host_prog = '/usr/local/Cellar/python@3.8/3.8.5/bin/python3.8'
-
 " python3 のパス
 let g:python3_host_prog = expand('~/nvim-python3/bin/python3')
 " python2のパス
