@@ -3,7 +3,7 @@
 シンプルvimの設定（プラグインなし）
 
 ## nvim/
-neovimの設定（dein.vim coc.vim）
+neovimの設定（dein coc init.vim）
 
 ## 初期設定(シンボリック作成)
 `$ cd ~/`

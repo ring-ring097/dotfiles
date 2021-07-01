@@ -89,6 +89,8 @@ inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap () ()
 inoremap ` ``<LEFT>
+nnoremap }} bi[<ESC>eli]<ESC>
+nnoremap )) bi(<ESC>eli)<ESC>
 
 " 関数括弧の補完
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
@@ -111,6 +113,9 @@ nnoremap P p
 inoremap ;; <ESC><S-a>;<ESC>
 inoremap ,, <ESC><S-a>,<ESC>
 inoremap <C-@> <ESC>
+
+" :を行末に
+inoremap :: <ESC><S-a>:
 
 " visulaモード
 nnoremap vv viw
@@ -146,8 +151,6 @@ vnoremap U u
 " Undo, Redo
 nnoremap R <C-r>
 vnoremap R <ESC>
-
-" バッファタブ
 
 " ハイライト削除
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
