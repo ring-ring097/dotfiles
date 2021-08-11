@@ -45,20 +45,25 @@ neovimの設定（dein coc init.vim）
 ## python バージョン管理
 `$ brew install pyenv`
 
-~/.bash_profile または~/.zshrc 以下を追加
-`
-	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
-`
+\~/.bash_profile または\~/.zshrc 以下を追加
+	`export PYENV_ROOT="$HOME/.pyenv"`
+	
+	`export PATH="$PYENV_ROOT/bin:$PATH"`
+	
+	`eval "$(pyenv init -)"`
+
+保存
 `$ source ~/.bash_profile`
 
 切り替え
+
 `$ pyenv install (version) or (--list)`
+
 `$ pyenv local or global (version)`
 
 ## python仮想環境(venv)
 `$ python -m venv (name)`
+
 `$ . (name)/bin/activate`
 
 `$ pip install ~~~`
