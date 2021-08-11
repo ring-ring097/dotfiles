@@ -46,6 +46,7 @@ neovimの設定（dein coc init.vim）
 `$ brew install pyenv`
 
 \~/.bash_profile または\~/.zshrc 以下を追加
+
 	`export PYENV_ROOT="$HOME/.pyenv"`
 	
 	`export PATH="$PYENV_ROOT/bin:$PATH"`
