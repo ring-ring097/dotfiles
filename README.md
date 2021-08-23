@@ -10,7 +10,14 @@ neovimの設定（dein coc init.vim）
 
 `$ git clone https://github.com/ring-ring097/dotfiles.git`
 
+（zshの場合はdotfiles_z_Link.sh)
+
+エイリアス，シンボリック，必要なフォルダなどを用意
+
 `$ sh ~/dotfiles/dotfilesLink.sh`
+
+権限が必要になる場合は，
+`$ shmod u+x ~/dotfiles/dotfilesLink.sh`
 
 ## nvimのインストール 
 `$ brew update`
@@ -22,13 +29,29 @@ neovimの設定（dein coc init.vim）
 ## python3のインストール
 参照：https://kotaro7750.hatenablog.com/entry/nvim_venv
 
-`- $ brew install python3`
+`$ brew install python3`
 
-`- $ pip3 install -U neovim`
+`$ pip3 install -U neovim`
+
+## nodeのインストール
+`$ brew install nodebrew`
+
+`$ nodebre setup`
+
+`$ nodebrew install-binary stable`
+
+`$ nodebrew ls`
+
+`$ nodebrew use {version}`
+
+`$ echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bash_profile`
+
+## yarnのインストール
+`$ npm install -g yarn`
 
 
 ## dein.vimのインストール
-`$ mkdir ~/.vim/dein`
+`($ mkdir ~/.vim/dein)`
 
 `$ cd ~/.vim/dein`
 
@@ -38,6 +61,37 @@ neovimの設定（dein coc init.vim）
 
 **deinのsamplescriptsと見比べてpathを確認**
 
+## coc.nvimの設定
+`($ mkdir -p ~/.congfig/coc/extensions)`
+
+`:call coc#util#install()`
+
+`:CocList extensions`
+
+    - "coc-css": ">=1.2.6",
+
+    - "coc-dictionary": ">=1.2.2",
+    
+    - "coc-html": ">=1.4.1",
+    
+    - "coc-json": ">=1.3.3",
+    
+    - "coc-phpls": ">=2.2.0",
+    
+    - "coc-python": ">=1.2.13",
+    
+    - "coc-snippets": ">=2.4.2",
+    
+    - "coc-solargraph": ">=1.2.1",
+    
+    - "coc-tsserver": ">=1.6.7",
+    
+    - "coc-vimtex": ">=1.0.4",
+    
+    - "coc-word": ">=1.2.2",
+    
+    - "coc-yaml": ">=1.3.0"
+
 ##vim状態確認
 `:checkhealth`
 
@@ -45,7 +99,7 @@ neovimの設定（dein coc init.vim）
 ## python バージョン管理
 `$ brew install pyenv`
 
-\~/.bash_profile または\~/.zshrc 以下を追加
+\~/.bash_profile または\~/.zshrc に以下を追加
 
 	`export PYENV_ROOT="$HOME/.pyenv"`
 	

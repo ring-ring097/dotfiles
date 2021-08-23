@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/zsh
 
 # エイリアス作成
-echo "alias vi='nvim'" >> ~/.bash_profile
-source ~/.bash_profile
+echo "alias vi='nvim'" >> ~/.zprofile
+source ~/.zprofile
 
 # シンボリック作成
 ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
