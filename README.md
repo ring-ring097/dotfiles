@@ -31,11 +31,11 @@ neovimの設定（dein coc init.vim）
 
 `$ brew install python3`
 
-pythonのpath設定（init.nvim）（paythonのpathは:checkhealthに書いてる）
+pythonのpath設定（init.nvim）
 
-`let g:python3_host_prog = expand('python3のpath')`
+`let g:python3_host_prog = expand('which python3')`
 
-`let g:python_host_prog = expand('python2のpath')`
+`let g:python_host_prog = expand('which python2')`
 
 `$ pip3 install -U neovim`
 
