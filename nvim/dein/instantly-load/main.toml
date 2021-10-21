@@ -74,12 +74,16 @@ hook_add = '''
 
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-  nmap <silent> gd :vs<CR><Plug>(coc-definition)
+  nmap <silent> <space><space> :<C-u>CocList<cr>
 
-  nmap <silent> gf <Plug>(coc-references)
+  nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
 
-  nmap <silent> H :<C-u>call CocAction('doHover')<cr>
+  nmap <silent> <space>df :vs<CR><Plug>(coc-definition)
 
+  nmap <silent> <space>rf <Plug>(coc-references)
 
+  nmap <silent> <space>rn <Plug>(coc-rename)
+
+  nmap <silent> <space>fmt <Plug>(coc-format)
 '''
 

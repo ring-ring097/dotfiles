@@ -116,6 +116,10 @@ pythonのpath設定（init.nvim）
 保存
 `$ source ~/.bash_profile`
 
+big sur で古いバージョンのpythonをインストールする
+
+https://qiita.com/shimajiroxyz/items/788811730c152b18c997
+
 切り替え
 
 `$ pyenv install (version) or (--list)`

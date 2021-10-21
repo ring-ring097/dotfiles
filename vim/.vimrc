@@ -41,6 +41,7 @@ set laststatus=2       " ステータスラインを常に表示
 set wildmode=list:longest " コマ 
 set noshowmode         " 現在のモードを非表示 (lightline.vimで表示されるため)
 set norelativenumber
+set belloff=all " ビープ音を消す
 " <<<
 
 "--------------------------------------------------------------
@@ -68,8 +69,6 @@ endif
 "--------------------------------------------------------------
 vnoremap x "_x
 nnoremap x "_x
-inoremap :w<CR> <ESC>:w<CR>
-nnoremap gh :wq<CR>
 
 " 括弧の補完
 inoremap { {}<LEFT>

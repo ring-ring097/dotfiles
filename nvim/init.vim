@@ -122,6 +122,8 @@ nnoremap vv viw
 vnoremap > >gv
 vnoremap < <gv
 vnoremap / y/<C-r>"
+vnoremap <C-h> ^
+vnoremap <C-l> $
 
 " コマンドモード
 cnoremap <expr> :: getcmdtype() == ':' ? expand('%:h') . '/' : '%%'
