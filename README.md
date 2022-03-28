@@ -118,7 +118,7 @@ pythonのpath設定（init.nvim）
 
 big sur で古いバージョンのpythonをインストールする
 
-https://qiita.com/shimajiroxyz/items/788811730c152b18c997
+[参考](https://qiita.com/shimajiroxyz/items/788811730c152b18c997)
 
 切り替え
 
@@ -134,3 +134,9 @@ https://qiita.com/shimajiroxyz/items/788811730c152b18c997
 `$ pip install ~~~`
 
 `$ deactivate`
+
+## Ruby仮想環境(rbenv, bundler)
+
+`$ deactivate`
+
+[参考](https://yumegori.com/mac-gem-install20191106)

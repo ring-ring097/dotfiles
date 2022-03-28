@@ -26,15 +26,21 @@ hook_source='''
   let g:vimtex_view_general_viewer = 'displayline'
   let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
-  cnoremap g<CR> <ESC>i\begin{figure}[htbp]<CR>\centering<CR>\includegraphics[width=100mm]{hoge.jpeg}<CR>\caption{図のキャプション}<CR><BS>\end{figure}<ESC>
+  cnoremap graph<CR> <ESC>i\begin{figure}[H]<CR>\centering<CR>\includegraphics[width=100mm]{hoge.jpeg}<CR>\caption{図のキャプション}<CR><BS>\end{figure}<ESC>
 
-  cnoremap s<CR> <ESC>i\begin{lstlisting}[caption=hoge.c]<CR><CR>\end{lstlisting}<ESC><Up>
+  cnoremap code<CR> <ESC>i\begin{lstlisting}[caption=hoge.c]<CR><CR>\end{lstlisting}<ESC><Up>
 
-  cnoremap l<CR> <ESC>i% \は’’<CR>% \ll : コンパイルモードオン<CR>% \lv : pdfを開く<CR>% \le : エラー一覧<CR>% \lt : 目次を開く<CR><CR>% :g<CR> : 図の挿入<CR>% :s<CR> : コードの挿入<CR><CR>\documentclass[a4j]{jsarticle}<CR>\usepackage[dvipdfmx]{graphicx}<CR>\usepackage{listings}<CR>\usepackage{color}<CR><CR>% 全体のページ設定<CR>% ページ番号をフッタにふる<CR>\pagestyle{plain}<CR><CR>\makeatletter<CR><CR>\def\@thesis{レポート1}<CR>\def\id#1{\def\@id{#1}}<CR>% \def\master#1{\def\@master{#1}}<CR>\def\department#1{\def\@department{#1}}<CR><CR>\def\@maketitle{<CR>\begin{center}<CR>{\huge \@thesis \par} % 修士論文と記載される部分<CR>\vspace{10mm}<CR>{\LARGE\bf \@title \par}% 論文のタイトル部分<CR>\vspace{10mm}<CR>{\Large \@date\par} % 提出年月日部分<CR>\vspace{20mm}<CR>{\Large \@department \par} % 所属部分<CR>\vspace{10mm}<CR>% {\Large \@master \par} % 学年部分<CR>\vspace{10mm}<CR>{\Large 学籍番号　\@id \par} % 学籍番号部分<CR>\vspace{10mm}<CR>{\Large 氏名　\@author}% 氏名<CR>\end{center}<CR>% \par\vskip 1.5em<CR>}<CR><CR>\makeatother<CR><CR>\title{タイトルX}<CR>\date{\today}<CR>\department{情報学群\\情報メディア創成学類}<CR>\id{201911419}<CR>% \master{博士前期課程X年}<CR>\author{土佐凜斗}<CR><CR>% ここから本文内容記載する<CR>\begin{document}<CR><CR>% 表紙を表示させる<CR>\maketitle<CR><CR>% 表紙部分のみ頁番号を消す<CR>\thispagestyle{empty}<CR><CR>% 改ページ(表紙終わり)<CR>\newpage<CR><CR>\end{document}<CR><ESC>gg:w<CR>
+  cnoremap tex<CR> <ESC>i% \は’’<CR>% \ll : コンパイルモードオン<CR>% \lv : pdfを開く<CR>% \le : エラー一覧<CR>% \lt : 目次を開く<CR><CR>% :graph : 図の挿入<CR>% :code  : コードの挿入<CR>% :eq  : 数式の挿入<CR>% :sim  : 連立方程式の挿入<CR>% :mat  : 行列の挿入<CR><CR>\documentclass[a4j]{jsarticle}<CR>\usepackage[dvipdfmx]{graphicx}<CR>\usepackage{listings, jvlisting}<CR>\usepackage{color}<CR>\usepackage[dvipdfmx]{color}<CR>\usepackage{here}<CR><CR>\lstset{<CR>basicstyle={\ttfamily},<CR>identifierstyle={\small},<CR>commentstyle={\smallitshape},<CR>keywordstyle={\small\bfseries},<CR>ndkeywordstyle={\small},<CR>stringstyle={\small\ttfamily},<CR>frame={tb},<CR>breaklines=true,<CR>columns=[l]{fullflexible},<CR>numbers=left,<CR>xrightmargin=0zw,<CR>xleftmargin=3zw,<CR>numberstyle={\scriptsize},<CR>stepnumber=1,<CR>numbersep=1zw,<CR>lineskip=-0.5ex<CR><C-h>}<CR><CR>% 全体のページ設定<CR>% ページ番号をフッタにふる<CR>\pagestyle{plain}<CR><CR>\makeatletter<CR><CR>\def\@thesis{レポート1}<CR>\def\id#1{\def\@id{#1}}<CR>% \def\master#1{\def\@master{#1}}<CR>\def\department#1{\def\@department{#1}}<CR><CR>\def\@maketitle{<CR>\begin{center}<CR>{\huge \@thesis \par} % 修士論文と記載される部分<CR>\vspace{10mm}<CR>{\LARGE\bf \@title \par}% 論文のタイトル部分<CR>\vspace{10mm}<CR>{\Large \@date\par} % 提出年月日部分<CR>\vspace{20mm}<CR>{\Large \@department \par} % 所属部分<CR>\vspace{10mm}<CR>% {\Large \@master \par} % 学年部分<CR>\vspace{10mm}<CR>{\Large 学籍番号　\@id \par} % 学籍番号部分<CR>\vspace{10mm}<CR>{\Large 氏名　\@author}% 氏名<CR>\end{center}<CR>% \par\vskip 1.5em<CR>}<CR><CR>\makeatother<CR><CR>\title{タイトルX}<CR>\date{\today}<CR>\department{情報学群\\情報メディア創成学類}<CR>\id{201911419}<CR>% \master{博士前期課程X年}<CR>\author{土佐凜斗}<CR><CR>\begin{document}<CR><CR>% 表紙を表示させる<CR>\maketitle<CR><CR>% 表紙部分のみ頁番号を消す<CR>\thispagestyle{empty}<CR><CR>% 改ページ(表紙終わり)<CR>\newpage<CR><CR>% ここから本文内容記載する<CR><CR>\section{問1}<CR>\subsection{(1)}<CR>\begin{enumerate}<CR>\item[{\bf (a)}]<CR><CR><C-h>\end{enumerate}<CR><C-h>\subsection{(2)}<CR><CR><C-h>\section{問2}<CR><CR><C-h>\end{document}<CR><ESC>gg:w<CR>
+
+  cnoremap eq<CR> <ESC>i\begin{equation}<CR>\begin{split}<CR><C-h>\end{split}<CR><C-h>\end{equation}<CR>kko 
+
+  cnoremap sim<CR> <ESC>i\begin{displaymath}<CR>\left\[<CR>\begin{array}[l]<CR><C-h>\end{array}<CR><C-h>\right.<CR><C-h>\end{displaymath}<CR>kkko 
+
+  cnoremap mat<CR> <ESC>i\begin{equation}<CR>\begin{bmatrix}<CR>a & b \\<CR>c & d<CR><C-h>\end{bmatrix}<CR><C-h>\end{equation}<CR>kko 
 '''    
 
 # markdown previw
 [[plugins]]
 repo = 'iamcco/markdown-preview.nvim'
-on_ft = ['markdown', 'pandoc.markdown', 'rmd']
+on_ft = ['markdown', 'pandoc.markdown', 'rmd', 'md']
 build = 'cd app & yarn install'
