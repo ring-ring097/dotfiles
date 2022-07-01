@@ -35,11 +35,11 @@ set splitbelow         "画面を縦分割する際に下に開く
 set cinoptions+=+1
 set autoread           " 編集中のファイルが変更されたら自動で読み直す
 set showcmd            " 入力中のコマンドをステータスに表示する
-set cursorline         " 現在の行を強調表示
 set virtualedit=onemore " 行末の1文字先までカーソルを移動できるように
 set laststatus=2       " ステータスラインを常に表示
 set wildmode=list:longest " コマ 
 set noshowmode         " 現在のモードを非表示 (lightline.vimで表示されるため)
+":set norelativenumber 
 set norelativenumber
 set belloff=all " ビープ音を消す
 
@@ -89,6 +89,7 @@ inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap () ()
 inoremap ` ``<LEFT>
+inoremap < <><LEFT>
 nnoremap }} bi[<ESC>eli]<ESC>
 nnoremap )) bi(<ESC>eli)<ESC>
 
@@ -157,7 +158,10 @@ vnoremap R <ESC>
 " ハイライト削除
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
-" <<<
+" 閉じタグ補完
+inoremap <C-SPACE> <ESC>viw"hy$i></<ESC>"hp<RIGHT>bb<RIGHT>i
+
+" set cursorline         " 現在の行を強調表示
 
 "--------------------------------------------------------------
 "          plugin manager                                   <<<

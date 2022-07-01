@@ -6,17 +6,23 @@ repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
 # 閉じタグ補完
-[[plugins]]
-repo = 'alvan/vim-closetag'
-on_ft = ['html', 'xhtml', 'javascript.jsx', 'typescript.tsx', 'javascript', 'typescript']
-hook_add = '''
-  let g:closetag_filenames='*.html'
-  let g:closetag_xhtml_filenames='*.js,*.ts,*.jsx,*.tsx,*.vue'
-  let g:closetag_filetypes='html'
-  let g:closetag_xhtml_filetypes='jsx,tsx,javascript.jsx,typescript.tsx,vue'
-  let g:closetag_emptyTags_caseSensitive=1
-  let g:closetag_shortcut='>'
-'''
+# [[plugins]]
+# repo = 'alvan/vim-closetag'
+# on_ft = ['html','xhtml','javascript','javascript.jsx','typescript','typescript.tsx']
+# hook_add = '''
+#   let g:closetag_regions = {
+#       \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+#       \ 'javascript.jsx': 'jsxRegion',
+#       \ 'typescriptreact': 'jsxRegion,tsxRegion',
+#       \ 'javascriptreact': 'jsxRegion',
+#       \ }
+#   let g:closetag_filenames='*.html'
+#   let g:closetag_xhtml_filenames='*.xhtml,*.js,*.ts,*.jsx,*.tsx,*.vue'
+#   let g:closetag_filetypes='html,xhtml'
+#   let g:closetag_xhtml_filetypes='xhtml,jsx,tsx,javascript.jsx,typescript.tsx,vue'
+#   let g:closetag_emptyTags_caseSensitive=1
+#   let g:closetag_shortcut='>'
+# '''
 
 # latex
 [[plugins]]
@@ -42,5 +48,20 @@ hook_source='''
 # markdown previw
 [[plugins]]
 repo = 'iamcco/markdown-preview.nvim'
-on_ft = ['markdown', 'pandoc.markdown', 'rmd', 'md']
-build = 'cd app & yarn install'
+on_ft = ['markdown','pandoc.markdown','rmd']
+build = 'sh -c "cd app && yarn install"'
+# hook_source='''
+#   let g:mkdp_refresh_slow = 1 
+# '''
+
+# ruby plugins
+[[plugins]]
+repo = 'dense-analysis/ale'
+on_ft = ['rb']
+hook_source='''
+  let g:ale_disable_lsp = 1
+  let g:ale_lint_on_text_changed = 1
+'''
+f
+[[plugins]]
+repo = 'tpope/vim-endwise'

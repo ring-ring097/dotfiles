@@ -19,5 +19,6 @@
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
   },
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "eslint.filetypes": ["javascript", "vue"]
 }
