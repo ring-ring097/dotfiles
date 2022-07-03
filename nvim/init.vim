@@ -42,6 +42,7 @@ set noshowmode         " 現在のモードを非表示 (lightline.vimで表示�
 ":set norelativenumber 
 set norelativenumber
 set belloff=all " ビープ音を消す
+set cursorline " 行ハイライト
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()

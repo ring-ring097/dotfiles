@@ -1,3 +1,6 @@
+シェルスクリプトもっとちゃんと書こう
+https://www.takameron.info/post/dotfiles/
+
 # dotfiles
 ## vim/.vimrc
 シンプルvimの設定（プラグインなし）
@@ -10,14 +13,18 @@ neovimの設定（dein coc init.vim）
 
 `$ git clone https://github.com/ring-ring097/dotfiles.git`
 
-（zshの場合はdotfiles_z_Link.sh)
-
 エイリアス，シンボリック，必要なフォルダなどを用意
 
 `$ sh ~/dotfiles/dotfilesLink.sh`
 
+（zshの場合はdotfiles_z_Link.sh)
+
 権限が必要になる場合は，
 `$ shmod u+x ~/dotfiles/dotfilesLink.sh`
+
+## homebrewとパッケージのインストール
+
+参照：https://qiita.com/takeshisakuma/items/e9685fb9e394212247c0
 
 ## nvimのインストール 
 `$ brew update`
