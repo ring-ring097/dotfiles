@@ -88,6 +88,12 @@ hook_add = '''
 
   nmap <space>e <Cmd>CocCommand explorer<CR>
 
+  nmap <silent> <C-p> <Plug>(coc-diagnostic-prev)
+
+  nmap <silent> <C-n> <Plug>(coc-diagnostic-next)
+
+  command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
   command -nargs=0 Swagger :CocCommand swagger.render
 '''
 
