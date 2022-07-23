@@ -161,9 +161,9 @@ vnoremap R <ESC>
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " 閉じタグ補完
-inoremap <C-SPACE> <ESC>viw"hy$i></<ESC>"hp<RIGHT>bb<RIGHT>i
+inoremap <SPACE><SPACE> <ESC>viw"hy$i></<ESC>"hp<RIGHT>bb<RIGHT>i
 
-" set cursorline         " 現在の行を強調表示
+ " set cursorline         " 現在の行を強調表示
 
 "--------------------------------------------------------------
 "          plugin manager                                   <<<
