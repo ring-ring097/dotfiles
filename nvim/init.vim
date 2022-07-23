@@ -114,7 +114,8 @@ nnoremap P p
 " insertモードから抜ける
 inoremap ;; <ESC><S-a>;<ESC>
 inoremap ,, <ESC><S-a>,<ESC>
-inoremap <C-@> <ESC>
+inoremap <C-]> <ESC>
+imap <C-CR> <ESC>
 
 " :を行末に
 inoremap :: <ESC><S-a>:
