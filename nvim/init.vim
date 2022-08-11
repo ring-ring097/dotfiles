@@ -115,6 +115,7 @@ nnoremap P p
 inoremap ;; <ESC><S-a>;<ESC>
 inoremap ,, <ESC><S-a>,<ESC>
 inoremap <C-]> <ESC>
+vnoremap <C-[> <ESC>
 imap <C-CR> <ESC>
 
 " :を行末に
