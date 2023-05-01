@@ -62,6 +62,9 @@ endif
 "--------------------------------------------------------------
 "          key mapping                                      <<<
 "--------------------------------------------------------------
+" Leaderキー
+let mapleader = "\<Space>"
+
 vnoremap x "_x
 nnoremap x "_x
 nnoremap bd :bd<CR>
@@ -71,45 +74,51 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <C-j> gjgjgj
 nnoremap <C-k> gkgkgk
-nnoremap J gjgjgj
-nnoremap K gkgkgk
+nnoremap J 3gj
+nnoremap K 3gk
+nnoremap H 3h
+nnoremap L 3l
 nnoremap <C-h> ^
 nnoremap <C-l> $ 
 vnoremap <C-j> gjgjgj
 vnoremap <C-k> gkgkgk
-vnoremap J gjgjgj
-vnoremap K gkgkgk
+vnoremap J 3gj
+vnoremap K 3gk
+vnoremap H 3h
+vnoremap L 3l
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
 
-" 括弧の補完
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap () ()
-inoremap ` ``<LEFT>
-inoremap < <><LEFT>
-nnoremap }} bi[<ESC>eli]<ESC>
-nnoremap )) bi(<ESC>eli)<ESC>
-
-" 関数括弧の補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
-" クオーテーションの補完
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
-nnoremap "" bi"<ESC>eli"<ESC>
-nnoremap '' bi'<ESC>eli'<ESC>
-nnoremap " bhxelx
-nnoremap " bhxelx
+" " 括弧の補完
+" inoremap { {}<LEFT>
+" inoremap [ []<LEFT>
+" inoremap ( ()<LEFT>
+" inoremap () ()
+" inoremap ` ``<LEFT>
+" inoremap < <><LEFT>
+" nnoremap }} bi[<ESC>eli]<ESC>
+" nnoremap )) bi(<ESC>eli)<ESC>
+"
+" " 関数括弧の補完
+" inoremap {<Enter> {}<Left><CR><ESC><S-o>
+" inoremap [<Enter> []<Left><CR><ESC><S-o>
+" inoremap (<Enter> ()<Left><CR><ESC><S-o>
+"
+" " クオーテーションの補完
+" inoremap ' ''<LEFT>
+" inoremap " ""<LEFT>
+" nnoremap "" bi"<ESC>eli"<ESC>
+" nnoremap '' bi'<ESC>eli'<ESC>
+" nnoremap " bhxelx
+" nnoremap " bhxelx
 
 " クリップボード
 nnoremap p "0p
 nnoremap P p
+" ペースとしてそのままクリップボードに保持
+nnoremap vp viwpviwy
 
 " insertモードから抜ける
 inoremap ;; <ESC><S-a>;<ESC>
@@ -162,7 +171,7 @@ vnoremap R <ESC>
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " 閉じタグ補完
-inoremap <SPACE><SPACE> <ESC>viw"hy$i></<ESC>"hp<RIGHT>bb<RIGHT>i
+" inoremap <Leader><Leader> <ESC>viw"hy$i></<ESC>"hp<RIGHT>bb<RIGHT>i
 
  " set cursorline         " 現在の行を強調表示
 
@@ -173,6 +182,10 @@ inoremap <SPACE><SPACE> <ESC>viw"hy$i></<ESC>"hp<RIGHT>bb<RIGHT>i
 let g:python3_host_prog = expand('~/nvim-python3/bin/python3')
 " python2のパス
 let g:python_host_prog = expand('~/nvim-python2/bin/python2')
+" nodeのパス（copilotのためにv17）
+let g:copilot_node_command = expand('~/.nodebrew/node/v17.9.1/bin/node')
+" luaのパス
+set runtimepath^=~/.config/nvim
 
 if &compatible
   set nocompatible
@@ -219,6 +232,24 @@ let g:dein#auto_recache = 1
 
 " 手動リキャッシュ
 " call dein#recache_runtimepath()
+
+" Treesitter 設定
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {"html", "tsx", "vue"},
+  highlight = {
+    enable = false, -- シンタックスハイライトを有効にする
+  },
+  autotag = {
+    enable = true, -- nvim-ts-autotagの有効化
+  },
+}
+EOF
+
+
+" lua require('plugins.nvim_tree')
+lua require('plugins.telescope')
+lua require('plugins.nvim_web_devicons')
 
 if dein#check_install()
   call dein#install()

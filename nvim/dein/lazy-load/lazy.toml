@@ -5,25 +5,6 @@
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
-# 閉じタグ補完
-# [[plugins]]
-# repo = 'alvan/vim-closetag'
-# on_ft = ['html','xhtml','javascript','javascript.jsx','typescript','typescript.tsx']
-# hook_add = '''
-#   let g:closetag_regions = {
-#       \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-#       \ 'javascript.jsx': 'jsxRegion',
-#       \ 'typescriptreact': 'jsxRegion,tsxRegion',
-#       \ 'javascriptreact': 'jsxRegion',
-#       \ }
-#   let g:closetag_filenames='*.html'
-#   let g:closetag_xhtml_filenames='*.xhtml,*.js,*.ts,*.jsx,*.tsx,*.vue'
-#   let g:closetag_filetypes='html,xhtml'
-#   let g:closetag_xhtml_filetypes='xhtml,jsx,tsx,javascript.jsx,typescript.tsx,vue'
-#   let g:closetag_emptyTags_caseSensitive=1
-#   let g:closetag_shortcut='>'
-# '''
-
 # latex
 [[plugins]]
 repo = 'lervag/vimtex'
@@ -65,3 +46,46 @@ hook_source='''
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
+
+# jsx,tsx用
+# [[plugins]]
+# repo = 'othree/yajs.vim'
+# on_ft = ['jsx', 'tsx']
+# [[plugins]]
+# repo = 'maxmellon/vim-jsx-pretty'
+# on_ft = ['jsx', 'tsx']
+# [[plugins]]
+# repo = 'HerringtonDarkholme/yats.vim'
+# on_ft = ['jsx', 'tsx']
+
+# vue用
+[[plugins]]
+repo = 'yaegassy/coc-volar-tools'
+on_ft = ['vue']
+on_cmd = ['CocInstall coc-volar-tools']
+on_event = ['VimEnter']
+hook_post_update = '''
+  let dir = expand('~/.config/nvim/plugged/coc-volar-tools')
+  let cmd = 'yarn install --cwd ' . dir
+  call dein#util#execute('silent!' . cmd)
+'''
+
+[[plugins]]
+repo = 'leafOfTree/vim-vue-plugin'
+on_ft = ['vue']
+hook_source='''
+let g:vim_vue_plugin_config = { 
+      \'syntax': {
+      \   'template': ['html'],
+      \   'script': ['javascript'],
+      \   'style': ['css'],
+      \},
+      \'full_syntax': [],
+      \'initial_indent': [],
+      \'attribute': 0,
+      \'keyword': 0,
+      \'foldexpr': 0,
+      \'debug': 0,
+      \}
+'''
+

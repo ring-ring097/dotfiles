@@ -34,6 +34,10 @@ repo = 'simeji/winresizer'
 repo = 'airblade/vim-gitgutter'
 hook_add = 'set updatetime=100'
 
+# gitコマンド
+[[plugins]]
+repo = 'tpope/vim-fugitive' 
+
 # 多言語パック(プラグイン無効化は↓)
 # let let g:polyglot_disabled = ['{言語}']
 [[plugins]]
@@ -59,19 +63,19 @@ hook_add = '''
 
   set statusline^=%{coc#status()}
 
-  nmap <silent> <space><space> :<C-u>CocList<cr>
+  nmap <silent> <Leader><Leader> :<C-u>CocList<cr>
 
-  nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
+  nmap <silent> <Leader>h :<C-u>call CocAction('doHover')<cr>
 
-  nmap <silent> <space>df :vs<CR><Plug>(coc-definition)
+  nmap <silent> <Leader>df :vs<CR><Plug>(coc-definition)
 
-  nmap <silent> <space>rf <Plug>(coc-references)
+  nmap <silent> <Leader>rf <Plug>(coc-references)
 
-  nmap <silent> <space>rn <Plug>(coc-rename)
+  nmap <silent> <Leader>rn <Plug>(coc-rename)
 
-  nmap <silent> <space>fmt <Plug>(coc-format)
+  nmap <silent> <Leader>fmt <Plug>(coc-format)
 
-  nmap <space>e <Cmd>CocCommand explorer<CR>
+  nmap <Leader>e <Cmd>CocCommand explorer<CR>
 
   nmap <silent> <C-p> <Plug>(coc-diagnostic-prev)
 
@@ -79,28 +83,71 @@ hook_add = '''
 
   command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
-  command -nargs=0 Swagger :CocCommand swagger.render
+  command -nargs=0 Swagger :CocCommand Swagger.render
 '''
 
-# /usr/local/bin/fzf
+# fzf
+# [[plugins]]
+# repo = 'junegunn/fzf.vim'
+# on_cmd = [
+#     'Files',
+#     'ProjectFiles',
+#     'Buffers',
+#     'BLines',
+#     'History',
+#     'Tags',
+#     'BTags',
+#     'GFiles',
+#     'Ag',
+# ]
+# hook_add = '''
+# nnoremap <silent> ,a :<C-u>Ag<CR>
+# nnoremap <silent> ,f :<C-u>ProjectFiles<CR>
+# nnoremap <silent> ,b :<C-u>Buffers<CR>
+# nnoremap <silent> ,m :<C-u>History<CR>
+# set rtp+=/usr/local/bin/fzf 
+# '''
 
+# copilot
 [[plugins]]
-repo = 'junegunn/fzf.vim'
-on_cmd = [
-    'Files',
-    'ProjectFiles',
-    'Buffers',
-    'BLines',
-    'History',
-    'Tags',
-    'BTags',
-    'GFiles',
-    'Ag',
-]
-hook_add = '''
-nnoremap <silent> ,a :<C-u>Ag<CR>
-nnoremap <silent> ,f :<C-u>ProjectFiles<CR>
-nnoremap <silent> ,b :<C-u>Buffers<CR>
-nnoremap <silent> ,m :<C-u>History<CR>
-set rtp+=/usr/local/bin/fzf 
-'''
+repo = 'github/copilot.vim'
+
+# バッファのカラースキーマ
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+# ファイルエクスプローラ
+[[plugins]]
+repo = 'nvim-tree/nvim-tree.lua'
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+[[plugins]]
+repo = 'nvim-tree/nvim-web-devicons'
+
+# ファイル検索
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+[[plugins]]
+repo = 'nvim-lua/popup.nvim'
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+tag = '0.1.0'
+requires = ['nvim-lua/plenary.nvim']
+[[plugins]]
+repo = 'nvim-telescope/telescope-file-browser.nvim'
+
+# 閉じタグ補完
+[[plugins]]
+repo = 'windwp/nvim-ts-autotag'
+
+# 閉じかっこ補完
+ [[plugins]]
+ repo = 'windwp/nvim-autopairs'
+ if = 'has("nvim")'
+ on_lua = 'nvim-autopairs'
+ on_event = 'InsertEnter'
+ hook_source = '''
+ lua require('nvim-autopairs').setup{}
+ '''
+
+

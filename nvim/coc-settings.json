@@ -12,6 +12,12 @@
           "directory": "/tmp/ccls-cache"
         }
       }
+    },
+    "r": {
+      "command": "R",
+      "args": ["--slave", "-e", "languageserver::run()"],
+      "filetypes": ["r", "R", "rmd", "Rmd"],
+      "rootPatterns": [".git", ".svn", ".hg", ".Rproj", "DESCRIPTION", "NAMESPACE"]
     }
   },
   "snippets.extends": {
@@ -19,5 +25,16 @@
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
   },
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "markdown"
+  ],
+  "volar.takeOverMode.enabled": true,
+  "tsserver.enable": false
 }
