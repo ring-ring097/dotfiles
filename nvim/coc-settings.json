@@ -18,6 +18,11 @@
       "args": ["--slave", "-e", "languageserver::run()"],
       "filetypes": ["r", "R", "rmd", "Rmd"],
       "rootPatterns": [".git", ".svn", ".hg", ".Rproj", "DESCRIPTION", "NAMESPACE"]
+    },
+    "volar": {
+      "command": "volar-server",
+      "args": ["--stdio"],
+      "filetypes": ["vue"]
     }
   },
   "snippets.extends": {
