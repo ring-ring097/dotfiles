@@ -41,5 +41,8 @@
     "markdown"
   ],
   "volar.takeOverMode.enabled": true,
-  "tsserver.enable": false
+  "tsserver.enable": false,
+  "solargraph.useBundler": false,
+  "solargraph.autoformat": true,
+  "solargraph.diagnostics": true
 }

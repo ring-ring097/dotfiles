@@ -72,16 +72,18 @@ nnoremap bd :bd<CR>
 " カーソル系
 nnoremap j gj
 nnoremap k gk
-nnoremap <C-j> gjgjgj
-nnoremap <C-k> gkgkgk
+" nnoremap <C-j> gjgjgj
+" nnoremap <C-k> gkgkgk
 nnoremap J 3gj
 nnoremap K 3gk
 nnoremap H 3h
 nnoremap L 3l
-nnoremap <C-h> ^
-nnoremap <C-l> $ 
-vnoremap <C-j> gjgjgj
-vnoremap <C-k> gkgkgk
+" nnoremap <C-h> ^
+" nnoremap <C-l> $ 
+nnoremap <left> ^
+nnoremap <right> $
+" vnoremap <C-j> gjgjgj
+" vnoremap <C-k> gkgkgk
 vnoremap J 3gj
 vnoremap K 3gk
 vnoremap H 3h
@@ -109,8 +111,8 @@ inoremap <C-l> <right>
 " " クオーテーションの補完
 " inoremap ' ''<LEFT>
 " inoremap " ""<LEFT>
-" nnoremap "" bi"<ESC>eli"<ESC>
-" nnoremap '' bi'<ESC>eli'<ESC>
+nnoremap "" bi"<ESC>eli"<ESC>
+nnoremap '' bi'<ESC>eli'<ESC>
 " nnoremap " bhxelx
 " nnoremap " bhxelx
 
