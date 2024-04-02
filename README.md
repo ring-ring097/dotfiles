@@ -105,8 +105,12 @@ pythonのpath設定（init.nvim）
     
     - "coc-yaml": ">=1.3.0"
 
-##vim状態確認
+## vim状態確認
 `:checkhealth`
+
+## Copilot
+`:Copilot setup`
+`:Copilot status`
 
 
 ## python バージョン管理
