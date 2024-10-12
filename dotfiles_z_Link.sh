@@ -10,4 +10,4 @@ ln -sf ~/dotfiles/nvim ~/.config/nvim
 
 # 拡張機能用ディレクトリ作成
 mkdir ~/.vim/dein
-mkdir -p ~/.congfig/coc/extensions
+mkdir -p ~/.config/coc/extensions

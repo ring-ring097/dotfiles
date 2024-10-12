@@ -75,7 +75,7 @@ pythonのpath設定（init.nvim）
 **deinのsamplescriptsと見比べてpathを確認**
 
 ## coc.nvimの設定
-`($ mkdir -p ~/.congfig/coc/extensions)`
+`($ mkdir -p ~/.config/coc/extensions)`
 
 `:call coc#util#install()`
 

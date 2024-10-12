@@ -184,8 +184,6 @@ nmap <ESC><ESC> :nohlsearch<CR><ESC>
 let g:python3_host_prog = expand('~/nvim-python3/bin/python3')
 " python2のパス
 let g:python_host_prog = expand('~/nvim-python2/bin/python2')
-" nodeのパス（copilotのためにv17）
-let g:copilot_node_command = expand('~/.nodebrew/node/v17.9.1/bin/node')
 " luaのパス
 set runtimepath^=~/.config/nvim
 
@@ -229,6 +227,15 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
+let g:ccls = {
+    \ 'init_options': {
+    \   'compilationDatabaseDirectory': 'build',
+    \ },
+    \ 'cache': {
+    \   'directory': '.ccls-cache',
+    \ },
+    \ }
+
 " 起動時にプラグインのキャッシュを削除
 let g:dein#auto_recache = 1
 
@@ -248,10 +255,13 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" c++コンパイル時の処理ステータスを表示する設定
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " lua require('plugins.nvim_tree')
 lua require('plugins.telescope')
 lua require('plugins.nvim_web_devicons')
+lua require('plugins.copilot_chat')
 
 if dein#check_install()
   call dein#install()

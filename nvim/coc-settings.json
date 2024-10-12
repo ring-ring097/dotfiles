@@ -5,12 +5,28 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-      "rootPatterns": [".ccls-root", "compile_commands.json"],
+      "args": [
+        "--log-file=/tmp/ccls.log"
+      ],
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
       "initializationOptions": {
         "cache": {
           "directory": "/tmp/ccls-cache"
+        },
+        "clang": {
+          "extraArgs": [
+            "-isystem/usr/local/include",
+            "-isystem/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include",
+            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include",
+            "-isystem/Library/Developer/CommandLineTools/usr/include",
+            "-std=c++17"
+          ],
+          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0"
         }
+      },
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "trace": {
+        "server": "verbose"
       }
     },
     "r": {
@@ -40,9 +56,9 @@
     "vue",
     "markdown"
   ],
-  "volar.takeOverMode.enabled": true,
-  "tsserver.enable": false,
+  "volar.takeOverMode.enabled": false,  // for vue project
+  "tsserver.enable": true, // for react project
   "solargraph.useBundler": false,
-  "solargraph.autoformat": true,
+  "solargraph.autoformat": true, 
   "solargraph.diagnostics": true
 }

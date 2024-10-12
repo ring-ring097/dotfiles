@@ -47,17 +47,6 @@ hook_source='''
 [[plugins]]
 repo = 'tpope/vim-endwise'
 
-# jsx,tsx用
-# [[plugins]]
-# repo = 'othree/yajs.vim'
-# on_ft = ['jsx', 'tsx']
-# [[plugins]]
-# repo = 'maxmellon/vim-jsx-pretty'
-# on_ft = ['jsx', 'tsx']
-# [[plugins]]
-# repo = 'HerringtonDarkholme/yats.vim'
-# on_ft = ['jsx', 'tsx']
-
 # vue用
 [[plugins]]
 repo = 'yaegassy/coc-volar-tools'
