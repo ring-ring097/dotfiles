@@ -1,3 +1,5 @@
+大学時代のMacでの設定
+
 シェルスクリプトもっとちゃんと書こう
 https://www.takameron.info/post/dotfiles/
 
