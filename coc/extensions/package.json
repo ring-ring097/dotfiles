@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "coc-tsserver": ">=2.2.5",
+    "coc-css": ">=2.1.0",
+    "coc-json": ">=1.9.3",
+    "coc-eslint": ">=3.0.14",
+    "coc-html": ">=1.8.0",
+    "coc-pyright": ">=1.1.398",
+    "coc-dictionary": ">=1.2.3",
+    "coc-word": ">=1.2.2",
+    "coc-jedi": ">=0.36.1"
+  }
+}
