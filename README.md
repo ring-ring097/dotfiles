@@ -5,7 +5,7 @@ LY一年目
 シンプルvimの設定（プラグインなし）
 
 ## nvim/
-neovimの設定（dein coc init.vim）
+neovimの設定（lazy.nvim + kickstart.nvim + coc.nvim）
 
 ## 初期設定(シンボリック作成)
 `$ cd ~/`
