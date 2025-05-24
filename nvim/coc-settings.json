@@ -2,51 +2,6 @@
   "diagnostic.enable": true,
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "args": [
-        "--log-file=/tmp/ccls.log"
-      ],
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls-cache"
-        },
-        "clang": {
-          "extraArgs": [
-            "-isystem/usr/local/include",
-            "-isystem/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include",
-            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include",
-            "-isystem/Library/Developer/CommandLineTools/usr/include",
-            "-std=c++17"
-          ],
-          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0"
-        }
-      },
-      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "trace": {
-        "server": "verbose"
-      }
-    },
-    "r": {
-      "command": "R",
-      "args": ["--slave", "-e", "languageserver::run()"],
-      "filetypes": ["r", "R", "rmd", "Rmd"],
-      "rootPatterns": [".git", ".svn", ".hg", ".Rproj", "DESCRIPTION", "NAMESPACE"]
-    },
-    "volar": {
-      "command": "volar-server",
-      "args": ["--stdio"],
-      "filetypes": ["vue"]
-    }
-  },
-  "snippets.extends": {
-    "cpp": ["c"],
-    "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
-  },
-  "python.jediEnabled": false,
   "eslint.autoFixOnSave": true,
   "eslint.probe": [
     "javascript",
@@ -56,9 +11,14 @@
     "vue",
     "markdown"
   ],
-  "volar.takeOverMode.enabled": false,  // for vue project
-  "tsserver.enable": true, // for react project
-  "solargraph.useBundler": false,
-  "solargraph.autoformat": true, 
-  "solargraph.diagnostics": true
+
+  "tsserver.enable": true,
+  "jedi": {
+    "enable": true,
+    "startupMessage": false,
+    "executable.command": "jedi-language-server"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

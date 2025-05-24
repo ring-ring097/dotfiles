@@ -126,9 +126,4 @@ nnoremap P p
 " コマンドモード現在のパス表示
 cnoremap <expr> :: getcmdtype() == ':' ? expand('.') . '/' : '%%'
 
-" 補完表示時の挙動
-"set completeopt=menuone,noinsert 
-"inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-"inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
-"inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
-" <<<
+
