@@ -94,21 +94,32 @@ nnoremap j gj
 nnoremap k gk
 nnoremap J gjgjgj
 nnoremap K gkgkgk
-nnoremap <C-h> 0
-nnoremap <C-l> $
+nnoremap <C-h> H
+nnoremap <C-l> L
+nnoremap H 0
+nnoremap L $
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
 vnoremap J gjgjgj
 vnoremap K gkgkgk
+vnoremap H 0
+vnoremap L $
 
 " visulaモード
 nnoremap vv viw
 vnoremap / y/<C-r>"
 vnoremap > >gv
 vnoremap < <gv
+vnoremap ' <Esc>`<i'<Esc>`><Right>a'<Esc>
+vnoremap " <Esc>`<i"<Esc>`><Right>a"<Esc>
+vnoremap ( <Esc>`<i(<Esc>`><Right>a)<Esc>
+vnoremap ) <Esc>`<i(<Esc>`><Right>a)<Esc>
+vnoremap { <Esc>`<i{<Esc>`><Right>a}<Esc>
+vnoremap } <Esc>`<i{<Esc>`><Right>a}<Esc>
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
 
 " 画面分割系
 nnoremap gr gt

@@ -37,9 +37,9 @@ require('lazy').setup({
 
   -- require 'kickstart/plugins/todo-comments',
 
-  -- require 'kickstart/plugins/mini',
+  require 'kickstart/plugins/mini',
 
-  -- require 'kickstart/plugins/treesitter',
+  require 'kickstart/plugins/treesitter',
 
   -- カラースキーマ設定
   require 'kickstart/plugins/colorscheme',
@@ -70,6 +70,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
