@@ -6,23 +6,23 @@
 vim.keymap.set({ 'n', 'v' }, 'x', '"_x', { noremap = true })
 
 -- 括弧の補完
-vim.keymap.set('i', '{', '{}<Left>', { noremap = true })
-vim.keymap.set('i', '[', '[]<Left>', { noremap = true })
-vim.keymap.set('i', '(', '()<Left>', { noremap = true })
-vim.keymap.set('i', '`', '``<Left>', { noremap = true })
+-- vim.keymap.set('i', '{', '{}<Left>', { noremap = true })
+--vim.keymap.set('i', '[', '[]<Left>', { noremap = true })
+-- vim.keymap.set('i', '(', '()<Left>', { noremap = true })
+-- vim.keymap.set('i', '`', '``<Left>', { noremap = true })
 
 -- 関数括弧の補完 (改行を含む特殊マッピング)
-vim.keymap.set('i', '{<CR>', '{}<Left><CR><ESC><S-o>', { noremap = true })
-vim.keymap.set('i', '[<CR>', '[]<Left><CR><ESC><S-o>', { noremap = true })
-vim.keymap.set('i', '(<CR>', '()<Left><CR><ESC><S-o>', { noremap = true })
+-- vim.keymap.set('i', '{<CR>', '{}<Left><CR><ESC><S-o>', { noremap = true })
+-- vim.keymap.set('i', '[<CR>', '[]<Left><CR><ESC><S-o>', { noremap = true })
+-- vim.keymap.set('i', '(<CR>', '()<Left><CR><ESC><S-o>', { noremap = true })
 
 -- クオートの補完
-vim.keymap.set('i', "'", "''<Left>", { noremap = true })
-vim.keymap.set('i', '"', '""<Left>', { noremap = true })
+-- vim.keymap.set('i', "'", "''<Left>", { noremap = true })
+-- vim.keymap.set('i', '"', '""<Left>', { noremap = true })
 
 -- コロン(;)やカンマ(,)でノーマルモードへ
-vim.keymap.set('i', ';;', '<ESC><S-a>;<ESC>', { noremap = true })
-vim.keymap.set('i', ',,', '<ESC><S-a>,<ESC>', { noremap = true })
+-- vim.keymap.set('i', ';;', '<ESC><S-a>;<ESC>', { noremap = true })
+-- vim.keymap.set('i', ',,', '<ESC><S-a>,<ESC>', { noremap = true })
 
 -- カーソル移動系
 vim.keymap.set('n', 'j', 'gj', { noremap = true })

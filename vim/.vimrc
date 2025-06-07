@@ -71,23 +71,23 @@ vnoremap x "_x
 nnoremap x "_x
 
 " 括弧の補完
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap ` ``<LEFT>
+" inoremap { {}<LEFT>
+" inoremap [ []<LEFT>
+" inoremap ( ()<LEFT>
+" inoremap ` ``<LEFT>
 
 " 関数括弧の補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
+" inoremap {<Enter> {}<Left><CR><ESC><S-o>
+" inoremap [<Enter> []<Left><CR><ESC><S-o>
+" inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 " クオーテーションの補完
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
+" inoremap ' ''<LEFT>
+" inoremap " ""<LEFT>
 
 " コロンでノーマルモードへ
-inoremap ;; <ESC><S-a>;<ESC>
-inoremap ,, <ESC><S-a>,<ESC>
+" inoremap ;; <ESC><S-a>;<ESC>
+" inoremap ,, <ESC><S-a>,<ESC>
 
 " カーソル系
 nnoremap j gj
