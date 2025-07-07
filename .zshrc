@@ -47,12 +47,13 @@ zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr ":%F{green}!%f"
 zstyle ':vcs_info:git:*' unstagedstr ":%F{red}+%f"
 
-# pyenv 初期化用
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
-
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/rtosa/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+# AndroidStudio
+export ANDROID_HOME="/Users/rtosa/Library/Android/sdk"
+export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
+export PATH="${PATH}:${ANDROID_HOME}/emulator" 
+
