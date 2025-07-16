@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- python3 path
-vim.g.python3_host_prog = os.getenv 'HOME' .. '/.venvs/nvim-py3/bin/python'
+vim.g.python3_host_prog = '/Users/rtosa/.local/share/mise/installs/python/3.13.3/bin/python'
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false

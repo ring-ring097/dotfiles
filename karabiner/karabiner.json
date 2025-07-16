@@ -82,30 +82,6 @@
                         ]
                     },
                     {
-                        "description": "Switch to or launch Terminal with Command+E",
-                        "manipulators": [
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "osascript -e 'tell application \"Terminal\" to activate'"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
                         "description": "Switch to or launch Obsidian with Command+E",
                         "manipulators": [
                             {

@@ -1,24 +1,39 @@
 {
-  "diagnostic.enable": true,
-  "suggest.noselect": true,
-  "suggest.preferCompleteThanJumpPlaceholder": true,
-  "eslint.autoFixOnSave": true,
+  // ----------------------------------------
+  // 全般的な設定
+  // ----------------------------------------
+  "suggest.noselect": true, // 補完候補を自動で選択しない
+  "diagnostic.enable": true, // エラー診断を有効にする
+
+  // ----------------------------------------
+  // ESLint の設定 (coc-eslint)
+  // ----------------------------------------
+  "eslint.autoFixOnSave": true, // 保存時にESLintの自動修正を実行
   "eslint.probe": [
+    // ESLintを有効にする言語
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue",
-    "markdown"
+    "vue"
   ],
 
+  // ----------------------------------------
+  // Prettier の設定 (coc-prettier)
+  // ----------------------------------------
+  "prettier.formatOnSave": true, // 保存時にPrettierでフォーマット
+  "prettier.disableLanguages": ["vue"], // VueファイルはESLint側でフォーマットさせる
+
+  // ----------------------------------------
+  // TypeScript / JavaScript の設定 (coc-tsserver)
+  // ----------------------------------------
   "tsserver.enable": true,
-  "jedi": {
-    "enable": true,
-    "startupMessage": false,
-    "executable.command": "jedi-language-server"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+
+  // ----------------------------------------
+  // Python の設定 (例)
+  // ----------------------------------------
+  "jedi.enable": true,
+  "jedi.startupMessage": false,
+  "jedi.executable.command": "jedi-language-server",
+  "snippets.ultisnips.pythonPrompt": false
 }

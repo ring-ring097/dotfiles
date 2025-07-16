@@ -57,3 +57,13 @@ export ANDROID_HOME="/Users/rtosa/Library/Android/sdk"
 export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 export PATH="${PATH}:${ANDROID_HOME}/emulator" 
 
+# mise
+eval "$(mise activate zsh)"
+
+# medjedctl completion
+source /Users/rtosa/work/credential_manager/zsh/medjedctl.zsh
+
+# java
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$JAVA_HOME/bin:$PATH
+
