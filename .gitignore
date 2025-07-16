@@ -1,5 +1,35 @@
+# =======================================================
+# OS generated files
+# =======================================================
 .DS_Store
+Thumbs.db
+Desktop.ini
 
-# Ignore all node_modules directory
-/node_modules
+# =======================================================
+# Neovim temporary files
+# =======================================================
+# Swap
+*.sw[a-p]
+# Backup
+*~
+# Undo
+.un~
+# Session
+Session.vim
+*.session
 
+# =======================================================
+# Plugin & Tool specific
+# =======================================================
+# CoC extensions 
+/coc/extensions/node_modules/
+
+# Add other plugin cache/data directories here if needed
+# 例: /mason-data/
+# 例: /.cache/
+
+# =======================================================
+# Personal local override files
+# =======================================================
+local.lua
+custom/local.lua
