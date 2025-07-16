@@ -23,10 +23,10 @@ Session.vim
 # =======================================================
 # CoC extensions 
 /coc/extensions/node_modules/
-
-# Add other plugin cache/data directories here if needed
-# 例: /mason-data/
-# 例: /.cache/
+/coc/extensions/coc-json-data/
+/coc/extensions/coc-yank-data/
+/coc/extensions/package.json
+/coc/memos.json
 
 # =======================================================
 # Personal local override files
